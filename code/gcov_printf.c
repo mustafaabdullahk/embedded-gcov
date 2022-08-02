@@ -17,6 +17,7 @@
  **********************************************************************/
 
 #include "gcov_public.h"
+//#include "t32term.h"
 
 #ifdef GCOV_OPT_PROVIDE_PRINTF_IMITATION
 
@@ -36,9 +37,11 @@
  *
  * @return -1 if error, otherwise returns byte count written to UART
  */
-#include <stdio.h>
-#define write_bytes(fd, buf, n) putchar((int)(*(buf)))
-
+//#include <stdio.h>
+//#define write_bytes(fd, buf, n) putchar((int)(*(buf)))
+int write_bytes(int fd,char* buf,int n) {
+	return buf;
+}
 /***********************************************************************
  * The following functions support gcov_printf and are not meant to be
  * called otherwise.
