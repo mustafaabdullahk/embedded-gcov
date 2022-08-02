@@ -175,6 +175,7 @@ typedef FILE * GCOV_FILE_TYPE;
 //#define GCOV_PRINT_STR(str) fputs((str), stdout)
 //#define GCOV_PRINT_STR(str) printf("%s", str)
 #define GCOV_PRINT_STR(str) gcov_printf("%s", str)
+//#define GCOV_PRINT_STR(str) T32_Term_Puts(str)
 //#define GCOV_PRINT_STR(str) puts((str))
 
 /* Function to print a number without newline.
@@ -219,7 +220,7 @@ typedef long long gcov_type;
 void __gcov_init(struct gcov_info *info);
 void __gcov_exit(void);
 void __gcov_merge_add(gcov_type *counters, gcov_unsigned_t n_counters);
-
+int write_bytes(int fd,char* buf,int n);
 /* Our own creations */
 #ifdef GCOV_OPT_PROVIDE_CLEAR_COUNTERS
 void __gcov_clear(void);
