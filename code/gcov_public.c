@@ -65,7 +65,7 @@ typedef unsigned int u32;
 #if defined(GCOV_OPT_PRINT_STATUS) || defined(GCOV_OPT_OUTPUT_SERIAL_HEXDUMP)
 /* Include any header files needed for serial port I/O */
 /* Not always stdio.h for highly embedded systems */
-#include <stdio.h>
+//#include <stdio.h>
 //#include "all.h"
 #endif
 
@@ -73,7 +73,7 @@ typedef unsigned int u32;
 /* You need to set the output buffer pointer to your memory block */
 /* Size used will depend on size and complexity of source code
  * that you have compiled for coverage. */
-static unsigned char *gcov_output_buffer = (unsigned char *)(0x42000000);
+static unsigned char *gcov_output_buffer = (unsigned char *)(0x40000000);
 static gcov_unsigned_t gcov_output_index;
 #endif // GCOV_OPT_OUTPUT_BINARY_MEMORY
 
